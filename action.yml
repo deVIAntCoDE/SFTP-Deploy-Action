@@ -12,9 +12,12 @@ inputs:
     description: 'your sftp server port, default to 22'
     required: true
     default: "22"
+ password:  
+    description: 'your sftp password'
+    required: true
   ssh_private_key:
     description: 'you can copy private_key from your *.pem file, keep format'
-    required: true
+    required: false
   local_path:
     description: 'will put all file under this path'
     required: true
@@ -36,6 +39,7 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.server }}
     - ${{ inputs.port }}
+    - ${{ inputs.password }}
     - ${{ inputs.ssh_private_key }}
     - ${{ inputs.local_path }}
     - ${{ inputs.remote_path }}
